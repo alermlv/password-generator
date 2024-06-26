@@ -81,4 +81,5 @@ button {
     font-weight: 500;
     line-height: 39px;
     cursor: pointer;
+    user-select: none;
 }
