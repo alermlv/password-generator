@@ -94,9 +94,27 @@ const characters = [
 
 const firstPasswordEl = document.querySelector("#first-password");
 const secondPasswordEl = document.querySelector("#second-password");
+const passwordLengthEl = document.querySelector("#password-length");
 
 let firstPassword = "";
 let secondPassword = "";
+let passwordLength = 15;
+
+function increaseLength() {
+  if (passwordLength >= 20) return;
+  passwordLength += 1;
+  updatePasswordLength();
+}
+
+function decreaseLength() {
+  if (passwordLength <= 1) return;
+  passwordLength -= 1;
+  updatePasswordLength();
+}
+
+function updatePasswordLength() {
+  passwordLengthEl.textContent = passwordLength;
+}
 
 function generatePasswords() {
   firstPassword = getRandomPassword();
@@ -106,7 +124,7 @@ function generatePasswords() {
 
 function getRandomPassword() {
   let password = "";
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < passwordLength; i++) {
     let randomNumber = getRandomNumber(1, characters.length - 1);
     password += characters[randomNumber];
   }
