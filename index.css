@@ -46,6 +46,42 @@ button {
   margin-top: 10px;
 }
 
+.generator-length {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  background: #10b981;
+  color: #fff;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.password-length {
+  font-size: 16px;
+  font-weight: 500;
+  width: 40px;
+  height: 42px;
+  text-align: center;
+  line-height: 42px;
+  user-select: none;
+}
+
+.password-length:focus {
+  background: #5def92;
+  outline: none;
+}
+
+.minus-button,
+.plus-button {
+  font-weight: 500;
+  width: 40px;
+  height: 42px;
+  text-align: center;
+  line-height: 42px;
+  cursor: pointer;
+  user-select: none;
+}
+
 .generate-button {
   background-color: #10b981;
   font-size: 16px;

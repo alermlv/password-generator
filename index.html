@@ -12,6 +12,13 @@
     <div class="container">
         <h1>Generate a <span>random password</span></h1>
         <p class="generator-subtitle">Never use an insecure password again.</p>
+
+        <div class="generator-length">
+            <div onclick="decreaseLength()" class="minus-button">-</div>
+            <div id="password-length" class="password-length">15</div>
+            <div onclick="increaseLength()" class="plus-button">+</div>
+        </div>
+
         <button onclick="generatePasswords()" class="generate-button">Generate passwords</button>
         <hr class="line">
         <div class="generator-results">
