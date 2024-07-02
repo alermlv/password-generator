@@ -8,8 +8,8 @@ body {
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
-  color: #fff;
-  background-color: #1f2937;
+  color: #6b7280;
+  background-color: #ecfdf5;
 }
 
 h1,
@@ -28,10 +28,11 @@ h1 {
   font-size: 40px;
   line-height: 40px;
   letter-spacing: -1px;
+  color: #2b283a;
 }
 
 h1 span {
-  color: #4adf86;
+  color: #10b981;
 }
 
 button {
@@ -43,7 +44,6 @@ button {
 
 .generator-subtitle {
   margin-top: 10px;
-  color: #d5d4d8;
 }
 
 .generate-button {
@@ -60,7 +60,7 @@ button {
 .line {
   height: 1px;
   border: 0;
-  border-top: 1px solid #2f3e53;
+  border-top: 1px solid #d5d4d8;
   margin: 35px 0 0;
   padding: 0;
 }
@@ -76,11 +76,38 @@ button {
   height: 39px;
   background-color: #273549;
   border-radius: 6px;
-  color: #55f991;
+  color: #5def92;
   text-align: center;
   font-size: 16px;
   font-weight: 500;
   line-height: 39px;
   cursor: pointer;
   user-select: none;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: #1f2937;
+    color: #fff;
+  }
+
+  h1 {
+    color: #fff;
+  }
+
+  h1 span {
+    color: #4adf86;
+  }
+
+  .generator-subtitle {
+    color: #d5d4d8;
+  }
+
+  .line {
+    border-top: 1px solid #2f3e53;
+  }
+
+  .generator-result {
+    color: #55f991;
+  }
 }
