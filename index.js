@@ -101,38 +101,38 @@ let passwordLength = 15;
 function increaseLength() {
   if (passwordLength >= 20) return;
   passwordLength += 1;
-  updatePasswordLength();
+  updatePasswordLengthEl();
 }
 
 function decreaseLength() {
   if (passwordLength <= 1) return;
   passwordLength -= 1;
-  updatePasswordLength();
+  updatePasswordLengthEl();
 }
 
-function updatePasswordLength() {
+function updatePasswordLengthEl() {
   passwordLengthEl.textContent = passwordLength;
 }
 
 function generatePassword() {
-  password = getRandomPassword();
-  updatePassword();
+  password = getRandomString();
+  updatePasswordEl();
 }
 
-function getRandomPassword() {
-  let password = "";
+function getRandomString() {
+  let string = "";
   for (let i = 0; i < passwordLength; i++) {
-    let randomNumber = getRandomNumber(1, characters.length - 1);
-    password += characters[randomNumber];
+    let randomInteger = getRandomInteger(1, characters.length - 1);
+    string += characters[randomInteger];
   }
-  return password;
+  return string;
 }
 
-function getRandomNumber(min, max) {
+function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function updatePassword() {
+function updatePasswordEl() {
   passwordEl.textContent = password;
 }
 
