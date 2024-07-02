@@ -92,12 +92,10 @@ const characters = [
   "/",
 ];
 
-const firstPasswordEl = document.querySelector("#first-password");
-const secondPasswordEl = document.querySelector("#second-password");
+const passwordEl = document.querySelector("#password");
 const passwordLengthEl = document.querySelector("#password-length");
 
-let firstPassword = "";
-let secondPassword = "";
+let password = "";
 let passwordLength = 15;
 
 function increaseLength() {
@@ -116,10 +114,9 @@ function updatePasswordLength() {
   passwordLengthEl.textContent = passwordLength;
 }
 
-function generatePasswords() {
-  firstPassword = getRandomPassword();
-  secondPassword = getRandomPassword();
-  updatePasswords();
+function generatePassword() {
+  password = getRandomPassword();
+  updatePassword();
 }
 
 function getRandomPassword() {
@@ -135,14 +132,13 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function updatePasswords() {
-  firstPasswordEl.textContent = firstPassword;
-  secondPasswordEl.textContent = secondPassword;
+function updatePassword() {
+  passwordEl.textContent = password;
 }
 
-async function copyPassword(obj) {
+async function copyPassword() {
   try {
-    await navigator.clipboard.writeText(obj.textContent);
+    await navigator.clipboard.writeText(password);
   } catch (error) {
     console.log("Failed to copy password:", error);
   }

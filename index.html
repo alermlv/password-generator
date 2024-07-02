@@ -19,11 +19,11 @@
             <div onclick="increaseLength()" class="plus-button">+</div>
         </div>
 
-        <button onclick="generatePasswords()" class="generate-button">Generate passwords</button>
+        <button onclick="generatePassword()" class="generate-button">Generate password</button>
         <hr class="line">
         <div class="generator-results">
-            <div onclick="copyPassword(this)" id="first-password" class="generator-result"></div>
-            <div onclick="copyPassword(this)" id="second-password" class="generator-result"></div>
+            <div id="password" class="generator-result"></div>
+            <div onclick="copyPassword()" class="copy-result-button">Copy password</div>
         </div>
     </div>
     <script src="index.js"></script>
