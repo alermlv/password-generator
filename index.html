@@ -13,10 +13,17 @@
         <h1>Generate a <span>random password</span></h1>
         <p class="generator-subtitle">Never use an insecure password again.</p>
 
-        <div class="generator-length">
-            <div onclick="decreaseLength()" class="minus-button">-</div>
-            <div id="password-length" class="password-length">15</div>
-            <div onclick="increaseLength()" class="plus-button">+</div>
+        <div class="password-preferences">
+            <div class="preference-button length-button">
+              <div onclick="decreaseLength()" class="decrease-button">-</div>
+              <div id="password-length" class="password-length">15</div>
+              <div onclick="increaseLength()" class="increase-button">+</div>
+            </div>
+
+            <div class="preference-button active">Numbers</div>
+            <div class="preference-button active">Lowercase Characters</div>
+            <div class="preference-button active">Uppercase Characters</div>
+            <div class="preference-button active">Symbols</div>
         </div>
 
         <button onclick="generatePassword()" class="generate-button">Generate password</button>
