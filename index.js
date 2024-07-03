@@ -94,9 +94,12 @@ const characters = [
 
 const passwordEl = document.querySelector("#password");
 const passwordLengthEl = document.querySelector("#password-length");
+const preferencesEls = document.querySelectorAll(".preference-button");
 
 let password = "";
 let passwordLength = 15;
+let passwordPreferences = [];
+let filteredCharacters = [];
 
 function increaseLength() {
   if (passwordLength >= 20) return;
@@ -114,16 +117,57 @@ function updatePasswordLengthEl() {
   passwordLengthEl.textContent = passwordLength;
 }
 
+function setPreferences(obj) {
+  obj.classList.toggle("selected");
+  updatePasswordPreferences();
+  setFilteredCharacters();
+}
+
+function updatePasswordPreferences() {
+  passwordPreferences = [];
+  preferencesEls.forEach((element) => {
+    if (element.classList.contains("selected")) {
+      passwordPreferences.push(element.textContent);
+    }
+  });
+}
+
 function generatePassword() {
-  password = getRandomString();
+  password = getRandomString(filteredCharacters);
   updatePasswordEl();
 }
 
-function getRandomString() {
+function setFilteredCharacters() {
+  filteredCharacters = [];
+  passwordPreferences.forEach((element) => {
+    if (element === "Numbers") {
+      characters.map(function (char) {
+        if (char.match(/\d/)) filteredCharacters.push(char);
+      })
+    }
+    if (element === "Lowercase Characters") {
+      characters.map(function (char) {
+        if (char.match(/[a-z]/)) filteredCharacters.push(char);
+      })
+    }
+    if (element === "Uppercase Characters") {
+      characters.map(function (char) {
+        if (char.match(/[A-Z]/)) filteredCharacters.push(char);
+      })
+    }
+    if (element === "Symbols") {
+      characters.map(function (char) {
+        if (char.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/)) filteredCharacters.push(char);
+      })
+    }
+  });
+}
+
+function getRandomString(filteredCharacters) {
   let string = "";
   for (let i = 0; i < passwordLength; i++) {
-    let randomInteger = getRandomInteger(1, characters.length - 1);
-    string += characters[randomInteger];
+    let randomInteger = getRandomInteger(1, filteredCharacters.length - 1);
+    string += filteredCharacters[randomInteger];
   }
   return string;
 }

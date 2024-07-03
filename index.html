@@ -14,16 +14,16 @@
         <p class="generator-subtitle">Never use an insecure password again.</p>
 
         <div class="password-preferences">
-            <div class="preference-button length-button">
+            <div class="length-button">
               <div onclick="decreaseLength()" class="decrease-button">-</div>
               <div id="password-length" class="password-length">15</div>
               <div onclick="increaseLength()" class="increase-button">+</div>
             </div>
 
-            <div class="preference-button selected">Numbers</div>
-            <div class="preference-button selected">Lowercase Characters</div>
-            <div class="preference-button selected">Uppercase Characters</div>
-            <div class="preference-button selected">Symbols</div>
+            <div onclick="setPreferences(this)" class="preference-button">Numbers</div>
+            <div onclick="setPreferences(this)" class="preference-button">Lowercase Characters</div>
+            <div onclick="setPreferences(this)" class="preference-button">Uppercase Characters</div>
+            <div onclick="setPreferences(this)" class="preference-button">Symbols</div>
         </div>
 
         <button onclick="generatePassword()" class="generate-button">Generate password</button>

@@ -63,9 +63,6 @@ button {
 }
 
 .preference-button {
-  position: relative;
-  display: flex;
-  gap: 24px;
   background-color: transparent;
   font-size: 16px;
   font-weight: 500;
@@ -79,25 +76,30 @@ button {
   user-select: none;
 }
 
-.preference-button:hover {
-  background-color: #10b981;
-  color: #fff;
-  transition: 0.2s;
-}
-
 .preference-button.selected {
   background-color: #10b981;
   color: #fff;
 }
 
 .length-button {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 7px 40px;
+  border-radius: 6px;
   background-color: #10b981;
   color: #fff;
-  padding: 7px 42px;
+  cursor: pointer;
+  width: fit-content;
+  user-select: none;
 }
 
 .password-length {
   width: 24px;
+  line-height: 28px;
   text-align: center;
 }
 
