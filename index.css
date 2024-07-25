@@ -147,12 +147,6 @@ button {
   user-select: none;
 }
 
-.copy-result-button:hover {
-  background-color: #10b981;
-  color: #fff;
-  transition: 0.2s;
-}
-
 .line {
   height: 1px;
   border: 0;
