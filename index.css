@@ -177,15 +177,10 @@ button {
 @media screen and (prefers-color-scheme: dark) {
   body {
     background-color: #1f2937;
-    color: #fff;
   }
 
   h1 {
     color: #fff;
-  }
-
-  h1 span {
-    color: #4adf86;
   }
 
   .generator-subtitle {
@@ -194,9 +189,5 @@ button {
 
   .line {
     border-top: 1px solid #2f3e53;
-  }
-
-  .generator-result {
-    color: #55f991;
   }
 }
