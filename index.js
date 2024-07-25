@@ -152,7 +152,7 @@ function setFilteredCharacters() {
     }
     if (element === "Symbols") {
       characters.map(function (char) {
-        if (char.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/)) filteredCharacters.push(char);
+        if (char.match(/[`~!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/)) filteredCharacters.push(char);
       })
     }
   });
