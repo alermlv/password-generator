@@ -101,13 +101,13 @@ let passwordLength = 15;
 let passwordPreferences = [];
 let filteredCharacters = [];
 
-function increaseLength() {
+function increasePasswordLength() {
   if (passwordLength >= 20) return;
   passwordLength += 1;
   updatePasswordLengthEl();
 }
 
-function decreaseLength() {
+function decreasePasswordLength() {
   if (passwordLength <= 1) return;
   passwordLength -= 1;
   updatePasswordLengthEl();
