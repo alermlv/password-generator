@@ -132,11 +132,6 @@ function updatePasswordPreferences() {
   });
 }
 
-function generatePassword() {
-  password = getRandomString(filteredCharacters);
-  updatePasswordEl();
-}
-
 function setFilteredCharacters() {
   filteredCharacters = [];
   passwordPreferences.forEach((element) => {
@@ -161,6 +156,11 @@ function setFilteredCharacters() {
       })
     }
   });
+}
+
+function generatePassword() {
+  password = getRandomString(filteredCharacters);
+  updatePasswordEl();
 }
 
 function getRandomString(filteredCharacters) {
