@@ -138,22 +138,23 @@ function setFilteredCharacters() {
     if (element === "Numbers") {
       characters.map(function (char) {
         if (char.match(/\d/)) filteredCharacters.push(char);
-      })
+      });
     }
     if (element === "Lowercase Characters") {
       characters.map(function (char) {
         if (char.match(/[a-z]/)) filteredCharacters.push(char);
-      })
+      });
     }
     if (element === "Uppercase Characters") {
       characters.map(function (char) {
         if (char.match(/[A-Z]/)) filteredCharacters.push(char);
-      })
+      });
     }
     if (element === "Symbols") {
       characters.map(function (char) {
-        if (char.match(/[`~!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/)) filteredCharacters.push(char);
-      })
+        if (char.match(/[`~!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/))
+          filteredCharacters.push(char);
+      });
     }
   });
 }
