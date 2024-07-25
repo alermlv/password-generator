@@ -160,7 +160,11 @@ function setFilteredCharacters() {
 }
 
 function generatePassword() {
-  password = getRandomString(filteredCharacters);
+  if (passwordPreferences.length === 0) {
+    password = getRandomString(characters);
+  } else {
+    password = getRandomString(filteredCharacters);
+  }
   updatePasswordEl();
 }
 
